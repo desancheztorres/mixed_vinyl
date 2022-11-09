@@ -28,3 +28,15 @@ composer composer/install composer/update composer/require:
 
 phpstan:
 	$(RUN_PHP) vendor/bin/phpstan analyse --memory-limit=1g
+
+tools/php-cs-fixer/vendor/bin/php-cs-fixer:
+	$(RUN_PHP) composer install --working-dir tools/php-cs-fixer
+
+cs: tools/php-cs-fixer/vendor/bin/php-cs-fixer
+	$(RUN_PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run -v --diff
+
+cs-fix: tools/php-cs-fixer/vendor/bin/php-cs-fixer
+	$(RUN_PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix -v
+
+cs-fix-risky: tools/php-cs-fixer/vendor/bin/php-cs-fixer
+	$(RUN_PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix -v --allow-risky=yes
