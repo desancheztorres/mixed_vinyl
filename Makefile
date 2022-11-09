@@ -25,3 +25,6 @@ composer/update: ACTION=update
 composer/require: ACTION=require $(module)
 composer composer/install composer/update composer/require:
 	$(RUN_PHP) composer $(ACTION)
+
+phpstan:
+	$(RUN_PHP) vendor/bin/phpstan analyse --memory-limit=1g
