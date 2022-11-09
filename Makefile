@@ -40,3 +40,6 @@ cs-fix: tools/php-cs-fixer/vendor/bin/php-cs-fixer
 
 cs-fix-risky: tools/php-cs-fixer/vendor/bin/php-cs-fixer
 	$(RUN_PHP) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix -v --allow-risky=yes
+
+test:
+	$(RUN_PHP) bin/phpunit --cache-result-file=var/cache/phpunit/.phpunit.cache
