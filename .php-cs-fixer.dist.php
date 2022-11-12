@@ -43,7 +43,7 @@ return $config
             'no_multiline_whitespace_around_double_arrow' => false,
             'no_singleline_whitespace_before_semicolons' => false,
             'no_superfluous_phpdoc_tags' => true,
-            'no_trailing_comma_in_singleline_array' => true,
+            'no_trailing_comma_in_singleline' => true,
             'no_whitespace_before_comma_in_array' => true,
             'no_whitespace_in_blank_line' => false,
             'operator_linebreak' => false,
